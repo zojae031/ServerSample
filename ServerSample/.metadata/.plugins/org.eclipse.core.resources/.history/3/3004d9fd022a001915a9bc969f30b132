@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -25,35 +24,17 @@ public class ServerThread extends Thread {
 			writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(client.getOutputStream(), "UTF-8")),
 					true);
 			JsonParser parser = new JsonParser();
-			while (true) {
+			while (true) {// flag로 바꾸어 로그아웃되면 스레드 종료되도록 만들어야 함
 
 				JsonObject data = (JsonObject) parser.parse(reader.readLine());
 				int key = data.get("key").getAsInt();
 				
 				System.out.println(data);
-				JsonObject sendData = new JsonObject();
-				switch(key) {
-				case 1:
-					sendData.addProperty("key", key);
-					sendData.addProperty("value", "결과값 1입니다");
-					break;
-				case 2:
-					sendData.addProperty("key", key);
-					sendData.addProperty("value", "두번째 결과값 입니다");
-					break;
-				case 3:
-					sendData.addProperty("key", key);
-					sendData.addProperty("value", "앙 기모띠 ^_^");
-					break;
-				}
-				writer.println(sendData/*data*/);
+				writer.println(""/*data*/);
 
 			}
 
-		} catch (NullPointerException e) {
-			System.out.println("클라이언트 접속 종료");
-		}
-		catch(IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
