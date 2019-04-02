@@ -44,4 +44,4 @@
 
 <hr>
 
-![encryption](./img/encryption.png)
+![encryption](./ServerSample/img/encryption.png)
