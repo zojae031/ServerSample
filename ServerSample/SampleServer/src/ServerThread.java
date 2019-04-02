@@ -26,7 +26,7 @@ public class ServerThread extends Thread {
 					true);
 			JsonParser parser = new JsonParser();
 			while (true) {
-
+				
 				JsonObject data = (JsonObject) parser.parse(reader.readLine());
 				int key = data.get("key").getAsInt();
 				
@@ -46,7 +46,8 @@ public class ServerThread extends Thread {
 					sendData.addProperty("value", "æ” ±‚∏∂Ï ^_^");
 					break;
 				}
-				writer.println(sendData/*data*/);
+				System.out.println("∫∏≥æ µ•¿Ã≈Õ : "+sendData);
+				writer.println(sendData.toString()/*data*/);
 
 			}
 
