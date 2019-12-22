@@ -21,16 +21,12 @@ public class Client extends ServerConnection {
 
     @Override
     void receive() {
-        new Thread(() -> {
-            try {
-                result = reader.readLine();
-            } catch (IOException e) {
-                System.out.println("서버로 부터 데이터를 받지 못함");
-            }
-            System.out.println("서버로 부터 받은 결과 : " + result);
-
-        }).start();
-
+        try {
+            result = reader.readLine();
+        } catch (IOException e) {
+            System.out.println("서버로 부터 데이터를 받지 못함");
+        }
+        System.out.println("서버로 부터 받은 결과 : " + result);
     }
 
 }
