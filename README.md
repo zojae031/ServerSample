@@ -1,8 +1,8 @@
 # ServerSample
 ## 테스트용 서버 샘플
 
- - 자바 서버 기본 샘플 (Socket)  : [SampleServer](https://github.com/zojae031/ServerSample/tree/master/ServerSample/SampleServer)
-
+ - 자바 샘플1 (Blocking Socket)  : [SampleServer](https://github.com/zojae031/ServerSample/tree/master/ServerSample/SampleServer)
+ - 자바 샘플2 (Non_Blocking Socket) : [Nio_Server](https://github.com/zojae031/ServerSample/blob/master/ServerSample/NIO_Server/src/Server.java)  
 </hr>  
 
 ## 암호화 (테스트용 서버 샘플 기반 예제)
